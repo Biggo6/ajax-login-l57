@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/processMyForm', function() {
+    $data = request()->all();
+    if(auth()->attempt($data)) {
+        // login successfully
+    }else {
+        // invalid user
+    }
+});
